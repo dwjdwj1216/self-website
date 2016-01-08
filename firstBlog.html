@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>dwjdwj</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300|Open+Sans:700" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <!-- 个人css-->
+	<link rel="stylesheet" href="css/mycss.css" />
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div class="page">
+	<!-- ==== START MASTHEAD ==== -->
+	<header class="masthead" role="banner">
+		<p class="logo"><a href="/"><img src="image/logo.jpg" alt="Le Journal" /></a></p>
+
+		<ul class="social-icon">
+			<li><em class="qq"></em><div>
+				dwj's qq is 270542958.Please with your purpose.
+			</div></li>
+			<li><em class="weixin"></em><div>
+				dwj's weixin id is dwjdwj1216.Please with your purpose.
+			</div></li>
+			<li><em class="weibo"></em><div>
+				dwj doesn't play weibo.
+			</div></li>
+		</ul>
+
+
+
+		<nav role="navigation">
+			<ul class="nav-main">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="messageBoard.html">Message Board</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- end masthead -->
+
+	<div class="container clearfix">
+	<!-- ==== START MAIN ==== -->
+	<main role="main">
+		<section class="post">
+			<article>
+				<header>
+    				<h1 class="entry-title">[转]深入理解JavaScript系列（结局篇）</h1>
+    				<p class="meta"></p>
+    
+				</header>
+				<div class="entry-content"><blockquote><p>What separates design from art is that design is meant to be... functional.<br/>
+					<p align=right>&mdash; Cameron Moll</p></p></blockquote>
+
+					<p>最近几个月忙得实在是不可开交，终于把《深入理解JavaScript系列》的最后两篇“补全”了，所谓的全是不准确的，因为很多内容都没有写呢，比如高性能、Ajax安全、DOM详解、JavaScript架构等等。但因为经历所限，加上大叔希望接下来写点其它东西，所以此篇文字就暂且当前完结篇的总结吧，以后有时间的话，可以继续加上一些未涉及的专题内容。</p>
+				</div>
+				<div id="cnblogs_post_body"><h2>介绍</h2>
+					<p>最近几个月忙得实在是不可开交，终于把《深入理解JavaScript系列》的最后两篇&ldquo;补全&rdquo;了，所谓的全是不准确的，因为很多内容都没有写呢，比如高性能、Ajax安全、DOM详解、JavaScript架构等等。但因为经历所限，加上大叔希望接下来写点其它东西，所以此篇文字就暂且当前完结篇的总结吧，以后有时间的话，可以继续加上一些未涉及的专题内容。</p>
+					<h2>网络文章来源</h2>
+					<p>本系列文章参考了大量的互联网网站，在此向各位网站拥有者、博主、提到的以及未提到的作者们说一声：多谢感谢了。</p>
+					<p>本系列文章主要参考了如下站点：</p>
+					<p>五大原则：http://freshbrewedcode.com/derekgreer</p>
+					<p>ECMAScript262系列：http://dmitrysoshnikov.com/</p>
+					<p>DOM系列文章：http://net.tutsplus.com</p>
+					<p>设计模式系列文章参考如下三个网站：</p>
+					<p>http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/</p>
+					<p>http://shichuan.github.com/javascript-patterns/</p>
+					<p>https://github.com/tcorral/Design-Patterns-in-Javascript/</p>
+					<p>其它文章，总结自自己的收藏、心得，结合了互联网上的各位大牛的博客总结整理而成，因为参考地址太多，无法一一列出，如果忘记了各位各种的版权声明，请及时告知，以便及时处理，多谢！</p>
+					<h2>参考书籍</h2>
+					<p>这里列出的书籍是大叔曾经读过的，也是在整理博文的时候经常参考的书籍，推荐给大家阅读。</p>
+					<p><br /><strong>初级读物</strong>：<br />《JavaScript高级程序设计》：一本非常完整的经典入门书籍，被誉为JavaScript圣经之一，详解的非常详细，最新版第三版已经发布了，建议购买。</p>
+					<p><br /><strong>中级读物</strong>：<br />《JavaScript权威指南》：另外一本JavaScript圣经，讲解的也非常详细，属于中级读物，建议购买。<br />《JavaScript.The.Good.Parts》：Yahoo大牛，JavaScript精神领袖Douglas Crockford的大作，虽然才100多页，但是字字珠玑啊！强烈建议阅读。<br />《高性能JavaScript》：《JavaScript高级程序设计》作者Nicholas C. Zakas的又一大作。<br />《Eloquent JavaScript》：这本书才200多页，非常短小，但是改变了我写作的习惯，本书通过几个非常经典的例子（艾米丽姨妈的猫、悲惨的隐士、模拟生态圈、推箱子游戏等等）来介绍JavaScript方方面面的知识和应用方法，非常值得一读，同时这本书的中文版也是大叔翻译的，点击屏幕右上角可以订购，希望大家多多支持。</p>
+					<p><br /><strong>高级读物</strong>：<br />《JavaScript Patterns 》：书中介绍到了各种经典的模式，如构造函数、单例、工厂等等，值得学习。<br />《Pro.JavaScript.Design.Patterns》：Apress出版社讲解JavaScript设计模式的书，非常不错。<br />《Developing JavaScript Web Applications》：构建富应用的好书，针对MVC模式有较为深入的讲解，同时也对一些流程的库进行了讲解。<br />《Developing Large Web Applications》：将这本书归结在这里，貌似有点不妥，因为这里不仅有JavaScript方面的介绍，还有CSS、HTML方面的介绍，但是介绍的内容却都非常不错，真正考虑到了一个大型的Web程序下，如何进行JavaScript架构设计，值得一读。<br /><br /><strong>其它参考书籍</strong>：</p>
+					<p>《大话设计模式》：博文里关于设计模式的文章，有些总结性的文字来自于此。</p>
+					<p>《设计模式&mdash;&mdash;可复用面向对象软件的基础》：博文里关于设计模式的文章，有些介绍性和总结性的文章来自于此。</p>
+					<h2>总结</h2>
+					<p>在写此系列文章期间，大叔也学到了很多很多内容。同时为了不误人子弟，大叔参考了很多很多文章，同时也阅读了那么多书籍，但博客里的文章，可能依然有很多错误，希望各位如果发现错误的话，请及时告知，以便及时修正而不再继续误导其它人。</p>
+					<p>同时，大家在阅读过程中，有任何问题都可以在相应的文章里留言，大叔将在不耽误工作的情况下尽力回复。</p>
+					<footer>
+				    	<p class="meta">
+							<span class="byline author vcard">作者： <span class="fn">汤姆大叔</span></span>
+							<time datetime="2012-07-26T08:54:03+08:00" pubdate data-updated="true">2012年07月26日</time>
+						</p>
+					</footer>
+			</article>
+			<footer class="footer">
+				<input type="button" name="Submit" onclick="javascript:history.back(-1);" value="返回上一页">
+			</footer>
+		</section>
+
+		
+	</main>
+	<!-- end main -->
+
+	<!-- ==== START SIDEBAR ==== -->
+	<div class="sidebar">
+		<div class="about">
+			<h2>About Me</h2>
+
+			<img src="image/lufei.jpg" alt="" />
+			
+			<p>
+				姓名：戴王炯
+				<br>
+				年龄：21岁
+				<br>
+				籍贯：浙江瑞安
+				<br>
+				就读学校：杭州电子科技大学
+				<br>
+				就读专业：软件工程专业
+				<br>
+				毕业时间：2017年6月
+
+			</p>
+		</div>
+
+		<div class="mod">
+			<h2>My Experiencing</h2>
+			<p>
+				初中就读于瑞安集云中学。
+				<br>
+				高中就读于瑞安十中。
+				<br>
+				大学就读于杭州电子科技大学软件工程专业。
+				<br>
+				曾参加浙江省电子商务大赛获三等奖，参加第六届中国创新创业服务外包大赛获三等奖。
+			</p>
+		</div>
+
+		<aside class="mod">
+			<h2>Popular rank</h2>
+
+			<ul class="links">
+			    <li><a href="firstBlog.html" class="more">[转]深入理解JavaScript系列</a></li>
+			    <li><a href="secondBlog.html" class="more">[转]Objective-C之优雅的命名</a></li>
+			</ul>
+		</aside>
+
+		<aside class="mod">
+			<h2>Recently Shared</h2>
+
+			<ul class="links">
+			    <li><a href="firstBlog.html" class="more">[转]深入理解JavaScript系列</a></li>
+			    <li><a href="secondBlog.html" class="more">[转]Objective-C之优雅的命名</a></li>
+
+			</ul>
+		</aside>
+	</div>
+	<!-- end sidebar -->
+	</div>
+	<!-- end container -->
+
+	<!-- ==== START PAGE FOOTER ==== -->
+	<footer role="contentinfo" class="footer">
+		<p class="legal"><small>&copy; 2015 dwjdwj. All Rights Reserved.</small></p>
+	</footer>
+	<!-- end page footer -->
+</div> <!-- end page -->
+
+
+</body>
+</html>

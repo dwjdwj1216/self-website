@@ -1,0 +1,759 @@
+/*  
+=========================
+Le Journal (Responsive)
+=========================
+*/
+
+
+/* normalize.css v2.1.2 | MIT License | git.io/normalize
+    (truncated for example in book)
+---------------------------------------------------------------- */
+
+/* ::: HTML5 display definitions ::: */
+/**
+ * Correct `block` display not defined in IE 8/9.
+
+ */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+  display: block;
+}
+
+/* ::: Base ::: */
+/**
+ * Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd,
+q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt,
+dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot,
+thead, tr, th, td, canvas, details, embed, figure, figcaption,hgroup, menu, nav, output, summary, time,
+mark, audio,blockquote{
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+details, hgroup,
+menu,  summary {
+    display: block
+}
+
+h2,section h1{
+  font-size: 1.5em;
+}
+
+h1,h2,h3,h4,h5,h6{
+  text-rendering:optimizelegibility;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0;
+}
+body > header h1, h1, h2, h3, h4, h5, h6 {
+    font-family: Times-Bold, STSongti-SC-Bold, Times
+}
+body > header h2, article header p.meta, article > footer, .post footer,
+body > footer {
+    font-family: "PT Sans", "Helvetica Neue", Arial, sans-serif
+}
+
+body, .post a[rel=full-article] {
+    font-family: helvetica, STHeitiSC-Light
+}
+
+pre, code, tt, p code, li code {
+    font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace
+}
+
+body > header h1 {
+    font-size: 2.2em;
+    font-family: Times-Bold, STSongti-SC-Bold, Times;
+    font-weight: normal;
+    line-height: 1.2em;
+    margin-bottom: 0.6667em
+}
+
+body > header h2 {
+    font-family: Times-Bold, STSongti-SC-Bold, Times
+}
+/* ::: Links ::: */
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a {
+    color: #1863a1;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -o-transition: color 0.3s;
+    transition: color 0.3s
+}
+
+
+a:focus {
+    color: #0181eb;
+    outline: thin dotted;
+}
+
+a:hover {
+    color: #0181eb;
+    outline: 0;
+}
+
+a:active {
+    color: #01579f;
+    outline: 0;
+}
+/* ::: Typography ::: */
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/* ::: Embedded content ::: */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0;
+}
+/* -- end of abridged normalize -- */
+
+
+/* WEB ICON FONT
+  (the social icons that appear
+  in the upper-right corner)
+------------------------------------------ */
+@font-face {
+  font-family: '华文行楷';
+  src: url("../fonts/华文行楷.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* GENERAL (APPLIED DIRECTLY TO ELEMENTS MOSTLY)
+------------------------------------------------ */
+body {
+  font: 100%/1.2 Georgia, "Times New Roman", serif;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+* {
+  -webkit-box-sizing: border-box; /* Android <= 2.3, iOS <= 4 */
+  -moz-box-sizing: border-box; /* Firefox 1+ */
+  box-sizing: border-box; /* Chrome, IE 8+, Opera, Safari 5.1 */
+}
+
+h1 {
+  color: #212121;
+  font-family: sans-serif;
+  font-size: 2.25em;
+  font-weight: 300;
+  letter-spacing: -2px;
+  line-height: .975;
+  margin-bottom: .4125em;
+}
+
+.about h2,
+.mod h2,
+.nav-main a {
+  font-family: sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.about h2,
+.mod h2 {
+  font-size: .875em; /* 15px/16px */
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+
+img {
+  border: 0;
+}
+
+.page {
+  /* these declarations combine to center entire page in browser */
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.post-photo,
+.post-photo-full,
+.about img,
+.map {
+  max-width: 100%;
+}
+
+
+/* MASTHEAD
+------------------------------------------ */
+.masthead {
+  padding-top: 12px;
+}
+
+.logo {
+  font-size: 10px;
+  line-height: 1;
+  margin-bottom: -8px;
+  margin-top: 0;
+}
+
+.logo a img{
+  width: 8em;
+  height: 8em;
+}
+
+.logo,
+.social-sites,
+.nav-main li {
+  text-align: center;
+}
+
+/* ::: Main Navigation ::: */
+.nav-main {
+  border-bottom: 1px solid #c7c7c8;
+  border-top: 5px solid #019443;
+  margin-top: 0;
+  padding: .45em 0 .5em;
+}
+
+.nav-main a {
+  color: #292929;
+  font-size: 1.125em; /* 18px/16px */
+}
+
+.nav-main a:hover {
+  color: #029443;
+  text-decoration: none;
+}
+
+.nav-main .current-page,
+.nav-main .current-page:hover {
+  color: #747474;
+  cursor: default;
+}
+
+
+/* ::: Social Sites Icons ::: */
+
+.social-icon div{
+  color: #000;
+  width: 600px;
+  margin:0 auto;
+  text-align: center;
+  font-size: 12px;
+}
+
+.social-icon li >div{
+  width: 150px;
+  min-height: 60px;
+  position: absolute;
+  display: inline;
+  margin-left: 805px;
+  padding: 0px;
+  visibility: hidden;
+  opacity: 0;
+  margin-top: 0px;
+  background: #ffffff;
+  font-size: 1em;
+
+
+ /* Setting the border-radius property for all Browsers */
+  -moz-border-radius: 5px; /* Firefox */
+  -webkit-border-radius: 5px; /* Safari and Chrome */
+  border-radius: 5px; /* Browsers that Support it like Opera */
+
+/* Setting the box-shadow property for all Browsers */
+  -moz-box-shadow: 0 0 8px gray; /* Firefox */
+  -webkit-box-shadow: 0 0 8px gray; /* Safari and Chrome */
+  filter: progid:DXImageTransform.Microsoft.Shadow(color='#272229', Direction=135, Strength=3); /* IE */
+  box-shadow: 0 0 8px gray; /* Browsers that Support it like Opera */
+/* Setting the transition property for all Browsers */
+  -moz-transition: all 0.5s ease-in-out; /* Firefox */
+  -webkit-transition: all 0.5s ease-in-out; /* Safari and Chrome */
+  -o-transition: all 0.5s ease-in-out; /* Opera */
+  transition: all 0.5s ease-in-out; /* Browsers that Support it */
+
+}
+
+.social-icon li:hover >div{
+  visibility: visible;
+  opacity: 1;
+  margin-top: -30px;
+  /* Setting the transition property for all Browsers */
+  -moz-transition: all 0.5s ease-in-out; /* Firefox */
+  -webkit-transition: all 0.5s ease-in-out; /* Safari and Chrome */
+  -o-transition: all 0.5s ease-in-out;  /* Opera */
+  transition: all 0.5s ease-in-out; /* Browsers that Support it */
+}
+.weixin {
+  background: url(../image/fns1.png) no-repeat -2px -1px;
+  width: 22px;
+  height: 23px;
+  position: absolute;
+  top:41px;
+  right: 0;
+}
+
+.weibo {
+  background: url(../image/fns1.png) no-repeat -2px -49px;
+  width: 22px;
+  height: 23px;
+  position: absolute;
+  top:41px;
+  right: 25px;
+}
+
+.qq {
+  background: url(../image/fns1.png) no-repeat -2px -73px;
+  width: 22px;
+  height: 23px;
+  position: absolute;
+  top:41px;
+  right: 50px;
+}
+
+.weixin:hover{
+  background: url(../image/fns2.png) no-repeat -2px -2px;
+  width: 22px;
+  height: 22px;
+}
+
+.weibo:hover{
+  background: url(../image/fns2.png) no-repeat -2px -26px;
+  width: 22px;
+  height: 22px;
+
+}
+
+
+.qq:hover{
+  background: url(../image/fns2.png) no-repeat -26px -26px;
+  width: 22px;
+  height: 22px;
+}
+/* MAIN CONTENT
+------------------------------------------ */
+main > .post:first-child > h1 {
+  margin-top: 0.769em;
+}
+
+.post-blurb p {
+  color: #363636;
+  font-size: 1.125em;
+  line-height: 1.575;
+}
+
+.post-blurb ul{
+  list-style: disc;
+}
+article header {
+  position: relative;
+  padding-top: 2em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  background: url('../image/hbackgound.png') bottom left repeat-x
+}
+article header h1 {
+    margin: 0
+}
+
+article h2 {
+    padding-top: 0.8em;
+    background: url('../image/hbackgound.png') top left repeat-x
+}
+
+article header h1 a {
+    text-decoration: none
+}
+
+article header h1 a:hover {
+    text-decoration: underline
+}
+
+
+.post {
+    overflow: hidden
+}
+
+.post article h1 {
+    font-size: 2.2em
+}
+
+.post  article h1 a {
+    color: inherit
+}
+
+.post  article h1 a:hover {
+    color: #0181eb
+}
+
+article blockquote {
+    font-style: italic;
+    position: relative;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    padding-left: 1em;
+    border-left: 4px solid rgba(170, 170, 170, 0.5)
+}
+
+.post  a[rel=full-article] {
+    background: #eaeff5;
+    display: inline-block;
+    padding: .4em .8em;
+    margin-right: .5em;
+    text-decoration: none;
+    color: #6c6d70;
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+    transition: background-color 0.5s
+}
+.post  a[rel=full-article]:hover {
+    background: #0181eb;
+    text-shadow: none;
+    color: #fbfcfd
+}
+/* ::: Blog Post Footer ::: */
+.post-footer {
+  border-bottom: 1px solid #dbdbdb;
+  border-top: 1px solid #dbdbdb;
+  padding-bottom: .9em;
+  padding-top: .9em;
+}
+
+.post-footer a {
+  font-weight: bold;
+}
+
+.post-footer time {
+  display: block;
+  margin-top: .25em;
+}
+.readMore{
+    padding-bottom: 2.5em;
+    margin-top: 2em;
+}
+.footer p {
+  color: #3a3a3a;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 0.688em;
+}
+
+.footer p small {
+  font-size: inherit;
+}
+
+
+
+/* ::: Pagination Links Below Blog Posts ::: */
+.pagination {
+  margin: 30px 0 0;
+  padding: 0;
+}
+
+.pagination li {
+  display: inline-block;
+  font: 0.875em arial, helvetica, sans-serif;
+  margin-right: 0.25em;
+}
+
+
+.pagination4 .page a,.pagination4 .page a:hover{
+  width:100px;text-align:center;border:1px solid #ddd;color:#999;background-color:#fff!important
+}
+
+/* SIDEBAR
+------------------------------------------ */
+.sidebar {
+  margin-top: 60px;
+}
+
+.mod h2 {
+  border-bottom: 1px solid #dbdbdb;
+  margin-top: 2.571em;
+  padding-bottom: .75em;
+}
+
+/* ::: About Me ::: */
+.about {
+
+  padding: 0.313em 0.625em 0.625em;
+}
+
+.about p {
+  font-size: 0.875em;
+  line-height: 1.5;
+}
+
+.about img {
+  /*border: 5px solid #bebebe;*/
+  display: block;
+  margin: 0 auto;
+}
+
+.map {
+  margin: 1.438em 0 0.813em;
+}
+
+/* ::: Previous and Shared Posts ::: */
+.links {
+  margin: 1.5em 0 4.125em;
+  padding-left: 0;
+}
+
+.links li {
+  margin-bottom: 1.1em;
+}
+
+.links a {
+  color: inherit;
+  font-size: 1.1em;
+  line-height: 1.195;
+}
+.links a:hover {
+    color: #0181eb
+}
+
+
+/* FOOTER
+--------------------------------- */
+footer[role="contentinfo"] {
+  border-top: 1px solid #cacbcb;
+}
+
+
+/* ===================== MEDIA QUERIES ===================== */
+
+/* 320+ 
+------------------------------------------ */
+@media only screen and (min-width: 20em) {
+  /* Masthead */
+  .nav-main li {
+    border-left: 1px solid #c8c8c8;
+    display: inline-block;
+    text-align: left;
+  }
+
+  .nav-main li:first-child {
+    border-left: none;
+  }
+
+  .nav-main li:last-child a {
+    padding-right: 0;
+  }
+
+  .nav-main a {
+    display: inline-block;
+    font-size: 1em;
+    padding: .5em .9em .5em 1.15em;
+  }
+
+  /* Sidebar */
+  .links {
+    width: 90%;
+  }
+}
+
+
+/* 480+ 
+------------------------------------------ */
+@media only screen and (min-width: 30em) {
+  /* Masthead */
+  .masthead {
+    position: relative;
+  }
+
+  .logo {
+    margin-bottom: 8px;
+    text-align: left;
+  }
+
+  .nav-main a {
+    font-size: 1.125em; /* 18px/16px */
+    padding-left: 1.4em;
+    padding-right: 1.15em;
+  }
+
+  .social-sites {
+    margin: 0;
+    position: absolute;
+    right: -3px;
+    top: 41px;
+  }
+
+  .social-sites li {
+    margin-left: -1px;
+  }
+
+  /* Main Content */
+  .post-photo {
+    float: left;
+    margin-bottom: 2px;
+    margin-right: 3.67%;
+    max-width: 61.667%;
+  }
+
+  .post-footer time {
+    display: inline;
+    margin-top: 0;
+  }
+
+  .post-footer time:before {
+    content: '•  ';
+  }
+
+  /* Sidebar */
+  .links a {
+    font-size: 1.125em;
+  }
+}
+
+
+/* 480-767-only 
+------------------------------------------ */
+@media only screen and (min-width: 30em) and (max-width: 47.9375em) {
+  /* Sidebar */  
+  .about {
+    overflow: hidden;
+  }
+
+  .about img {
+    float: left;
+    margin-right: 15px;
+  }
+}
+
+
+/* 600-767-only 
+------------------------------------------ */
+@media only screen and (min-width: 37.5em) and (max-width: 47.9375em) {
+  /* Sidebar */
+  .about {
+    padding-bottom: 1.4em;
+  }
+}
+
+
+/* 768+ 
+------------------------------------------- */
+@media only screen and (min-width: 48em) {
+  h1 {
+    font-size: 3.25em;
+  }
+
+  /* Masthead */
+  .masthead {
+    padding-top: 10px;
+  }
+
+  .nav-main {
+    margin-bottom: 0;
+  }
+
+  /* Main Content */
+  .container {
+    background: url(../image/bg.png) repeat-y 65.938% 0;
+    padding-bottom: 1.9375em;
+  }
+
+
+  article blockquote {
+    padding-left: 1.5em;
+    border-left-width: 4px
+  }
+
+
+  main {
+    float: left;
+    width: 62.5%;
+  }
+
+  main > .post:first-child > h1 {
+    margin-top: 0.904em;
+  }
+
+  .post-blurb p {
+    font-size: 1em;
+    line-height: 1.4;
+  }
+
+  .post-footer {
+    padding-bottom: .7em;
+    padding-top: .7em;
+  }
+
+  .footer p {
+    font-size: 0.688em;
+  }
+
+  .pagination {
+    margin-top: 45px;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    float: right;
+    margin-top: 1.875em;
+    width: 31.25%;
+  }
+
+  .about p {
+    font-size: 0.813em;
+  }
+
+  /* Page Footer */
+  footer[role="contentinfo"] {
+    border-top: 1px solid #cacbcb;
+  }
+}
+/* --- end media queries ---- */
+
+
+/* html5boilerplate.com Clearfix
+--------------------------------- */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+  *zoom: 1;
+}
